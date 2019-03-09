@@ -16,7 +16,7 @@ int main(int argc, const char * argv[])
     std::ifstream ip("/Users/karan/Desktop/EKF/EKF/Data.csv");
     if(!ip.is_open())
     {
-        std::cerr << "Failed to open the data file";
+        std::cerr << "Failed to open the data file\n";
         std::exit(EXIT_FAILURE);
     }
     

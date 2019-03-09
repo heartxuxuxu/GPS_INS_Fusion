@@ -7,6 +7,7 @@
 //
 
 #include "ekf.hpp"
+#include "utils.hpp"
 #include <iostream>
 
 void EKF::start(const int nin, const Eigen::VectorXd &xin, const Eigen::MatrixXd &Pin, const Eigen::MatrixXd &Fin, const Eigen::MatrixXd &Qin)
@@ -72,7 +73,7 @@ void EKF::updateJA(const double dt)
 
     if(this->verbose) std::cout << "Updating JA: About to calculate jacobian" << "\n";
     // Calculate jacobian
-   _JA =  calculate_jacobian(_state, dt);
+   _JA =  calculate_joacobian(_state, dt);
 }
 
 void EKF::predict()
